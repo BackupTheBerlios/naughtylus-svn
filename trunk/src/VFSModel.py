@@ -16,6 +16,7 @@ import gnomevfs
 import gnome.ui
 
 import Config
+from Utils import *
 
 class VFSModel(gtk.GenericTreeModel):
     column_types = (gtk.gdk.Pixbuf, str, long, str, str)
@@ -103,7 +104,9 @@ class VFSModel(gtk.GenericTreeModel):
         
         if column is 0:
             uri_str = str(self.uri.resolve_relative(rowref))
-            result, flags = gnome.ui.icon_lookup(self.iconTheme, self.iconFactory, uri_str, '', gnome.ui.ICON_LOOKUP_FLAGS_NONE, mime, info)
+            result, flags = gnome.ui.icon_lookup(self.iconTheme,
+                    self.iconFactory, uri_str, '',
+                    gnome.ui.ICON_LOOKUP_FLAGS_NONE, mime, info)
             if flags != 0:
                 print flags
             try:
@@ -129,14 +132,14 @@ class VFSModel(gtk.GenericTreeModel):
                 mode = info.permissions
             except:
                 pass
-            return mode #oct(stat.S_IMODE(mode))
+            return perms2str(mode) #oct(stat.S_IMODE(mode))
         elif column is 4:
             mtime = '???'
             try:
                 mtime = info.mtime
             except:
                 pass
-            return time.ctime(mtime)
+            return time.strftime('%b %d %H:%M', time.localtime(mtime))
 
     def on_iter_next(self, rowref):
         try:
