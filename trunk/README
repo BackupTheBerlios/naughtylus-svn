@@ -1,0 +1,6 @@
+Naughtylus is an "old school" two panel file manager for GNOME Desktop.
+It provides network transparency through gnome-vfs libraryand offers easy
+keyboard navigation. It aims for full integration with the GNOME Desktop.
+
+Naughtylus is written in Python using pygtk and gnome-python libraries.
+

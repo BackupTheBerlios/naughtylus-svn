@@ -1,0 +1,38 @@
+0.1
+	Browsing directories. Tab switches between panels.
+	Showing/hiding dotfiles. Regexp filter.
+
+0.2
+	Basic file management tasks: copy, move, rename, delete,
+	create directory.
+
+0.3
+	More advanced FM: changing file ownership and permissions,
+	advanced searching, like gnome-search-tool and mc but better ;)
+
+0.4
+	Viewing and editing files.
+
+0.5
+	Bookmarks/favorites (integrated with nautilus and
+	gtkfilechooser). Preferences editor.
+
+0.6
+	GNOME VFS integration.
+
+0.7
+	Switch to terminal (Ctrl-o)!
+
+0.8
+	UI and usability polish.
+
+0.9 * BETA *
+	Bugfixes.
+
+1.0
+	Stable and usable file manager
+
+
+Post 1.0:
+	plugins
+	threaded operation (like total commander)
