@@ -57,14 +57,10 @@ class MainWindow:
         gtk.main()
 		
     def initPanels(self):
-        self.leftTree = FileList.FileList('/')
-        self.rightTree = FileList.FileList('/')
+        self.leftTree = FileList.FileList('/', self.commandEntry, self.leftLabel, self.rightTree)
+        self.rightTree = FileList.FileList('/', self.commandEntry, self.rightLabel, self.leftTree)
         self.leftScroll.add(self.leftTree)
         self.rightScroll.add(self.rightTree)
-        self.leftTree.setOtherPanel(self.rightTree)
-        self.rightTree.setOtherPanel(self.leftTree)
-        self.leftTree.setCommandEntry(self.commandEntry)
-        self.rightTree.setCommandEntry(self.commandEntry)
         self.leftTree.show()
         self.rightTree.show()
         
